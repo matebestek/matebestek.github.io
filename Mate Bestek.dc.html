@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Public+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  html { scroll-behavior: smooth; }
+  body { margin: 0; }
+  ::selection { background: #285a64; color: #f5f1e8; }
+  *::-webkit-scrollbar { width: 10px; height: 10px; }
+  *::-webkit-scrollbar-thumb { background: rgba(40,90,100,.35); border-radius: 6px; }
+</style>
+<template id="__bundler_thumbnail"><svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><rect width="100" height="100" fill="#285a64"/><text x="50" y="50" dy="0.36em" text-anchor="middle" font-family="Georgia, serif" font-size="34" font-weight="500" fill="#f5f1e8">MB</text></svg></template>
+</helmet>
+<div style="--accent: {{ accent }}; --paper: {{ paper }}; --ink: #20262b; --muted: #6f6f66; --line: rgba(32,38,43,.12); background: var(--paper, #f5f1e8); color: var(--ink, #20262b); font-family: 'Public Sans', system-ui, sans-serif; font-size: 17px; line-height: 1.6; -webkit-font-smoothing: antialiased; min-height: 100vh;">
+
+  <!-- NAV -->
+  <nav style="position: sticky; top: 0; z-index: 50; display: flex; align-items: center; justify-content: space-between; padding: 16px clamp(20px, 6vw, 100px); background: color-mix(in srgb, var(--paper, #f5f1e8) 86%, transparent); backdrop-filter: saturate(1.4) blur(12px); border-bottom: 1px solid var(--line, rgba(32,38,43,.12));">
+    <a href="#top" style="font-family: 'Spectral', serif; font-weight: 600; font-size: 19px; letter-spacing: -.01em; color: var(--ink, #20262b); text-decoration: none;">Mate&nbsp;Beštek</a>
+    <div style="display: flex; align-items: center; gap: clamp(14px, 2.4vw, 32px); font-size: 14.5px;">
+      <a href="#work" style="color: var(--ink, #20262b); text-decoration: none; opacity: .72;" style-hover="opacity:1">Experience</a>
+      <a href="#focus" style="color: var(--ink, #20262b); text-decoration: none; opacity: .72;" style-hover="opacity:1">Focus</a>
+      <a href="#publications" style="color: var(--ink, #20262b); text-decoration: none; opacity: .72;" style-hover="opacity:1">Publications</a>
+      <a href="mailto:mate.bestek@gmail.com" style="display: inline-flex; align-items: center; gap: 8px; padding: 9px 18px; background: var(--accent, #285a64); color: #f7f4ee; text-decoration: none; border-radius: 999px; font-weight: 600; font-size: 14px;" style-hover="filter:brightness(1.08)">Get in touch</a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <header id="top" style="max-width: 1180px; margin: 0 auto; padding: clamp(56px, 9vw, 120px) clamp(20px, 6vw, 100px) clamp(40px, 6vw, 80px);">
+    <div style="display: grid; grid-template-columns: minmax(0, 1.55fr) minmax(0, 1fr); gap: clamp(32px, 5vw, 72px); align-items: center;">
+      <div>
+        <div style="font-family: 'IBM Plex Mono', monospace; font-size: 12.5px; letter-spacing: .18em; text-transform: uppercase; color: var(--accent, #285a64); margin-bottom: 22px;">Dr. Mate Beštek · Ljubljana &amp; Paris</div>
+        <h1 style="font-family: 'Spectral', serif; font-weight: 500; font-size: clamp(38px, 5.8vw, 70px); line-height: 1.04; letter-spacing: -.02em; margin: 0 0 26px; text-wrap: balance;">Connecting people, technology &amp; the life&nbsp;sciences.</h1>
+        <p style="font-size: clamp(17px, 1.5vw, 20px); line-height: 1.62; color: color-mix(in srgb, var(--ink, #20262b) 82%, transparent); max-width: 38ch; margin: 0 0 34px;">Two decades building national eHealth systems, healthcare interoperability, and AI for cancer screening — across Slovenia and the European Union.</p>
+        <div style="display: flex; flex-wrap: wrap; gap: 12px;">
+          <a href="mailto:mate.bestek@gmail.com" style="display: inline-flex; align-items: center; gap: 9px; padding: 12px 22px; background: var(--accent, #285a64); color: #f7f4ee; text-decoration: none; border-radius: 999px; font-weight: 600; font-size: 15px;" style-hover="filter:brightness(1.08)">Email me</a>
+          <a href="https://www.linkedin.com/in/matebestek" target="_blank" rel="noopener" style="display: inline-flex; align-items: center; gap: 9px; padding: 12px 22px; background: transparent; color: var(--ink, #20262b); text-decoration: none; border: 1px solid var(--line, rgba(32,38,43,.12)); border-radius: 999px; font-weight: 600; font-size: 15px;" style-hover="border-color:var(--accent,#285a64)">LinkedIn</a>
+          <a href="assets/Mate-Bestek-CV.pdf" target="_blank" rel="noopener" style="display: inline-flex; align-items: center; gap: 9px; padding: 12px 22px; background: transparent; color: var(--ink, #20262b); text-decoration: none; border: 1px solid var(--line, rgba(32,38,43,.12)); border-radius: 999px; font-weight: 600; font-size: 15px;" style-hover="border-color:var(--accent,#285a64)">Download CV ↓</a>
+        </div>
+      </div>
+
+      <sc-if value="{{ portrait }}" hint-placeholder-val="{{ true }}">
+        <div style="position: relative; aspect-ratio: 4/5; border-radius: 6px; overflow: hidden; background-color: #e7e0d2; background-image: repeating-linear-gradient(135deg, rgba(40,90,100,.10) 0 12px, rgba(40,90,100,0) 12px 24px); border: 1px solid var(--line, rgba(32,38,43,.12)); display: flex; align-items: flex-end; justify-content: center;">
+          <div style="font-family: 'IBM Plex Mono', monospace; font-size: 11.5px; color: rgba(32,38,43,.55); background: color-mix(in srgb, var(--paper,#f5f1e8) 80%, transparent); padding: 7px 12px; border-radius: 5px; margin-bottom: 16px; text-align: center;">portrait.jpg<br><span style="opacity:.7">replace via &lt;img&gt;</span></div>
+        </div>
+      </sc-if>
+    </div>
+
+    <!-- STAT BAND -->
+    <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: clamp(16px, 3vw, 40px); margin-top: clamp(48px, 7vw, 88px); padding-top: 36px; border-top: 1px solid var(--line, rgba(32,38,43,.12));">
+      <div>
+        <div style="font-family: 'Spectral', serif; font-size: clamp(30px, 3.4vw, 42px); font-weight: 500; line-height: 1; letter-spacing: -.02em;">20<span style="color: var(--accent, #285a64);">+</span></div>
+        <div style="font-family: 'IBM Plex Mono', monospace; font-size: 11.5px; letter-spacing: .1em; text-transform: uppercase; color: var(--muted, #6f6f66); margin-top: 12px;">Years in eHealth</div>
+      </div>
+      <div>
+        <div style="font-family: 'Spectral', serif; font-size: clamp(30px, 3.4vw, 42px); font-weight: 500; line-height: 1; letter-spacing: -.02em;">PhD</div>
+        <div style="font-family: 'IBM Plex Mono', monospace; font-size: 11.5px; letter-spacing: .1em; text-transform: uppercase; color: var(--muted, #6f6f66); margin-top: 12px;">IT Univ. Copenhagen</div>
+      </div>
+      <div>
+        <div style="font-family: 'Spectral', serif; font-size: clamp(30px, 3.4vw, 42px); font-weight: 500; line-height: 1; letter-spacing: -.02em;">35</div>
+        <div style="font-family: 'IBM Plex Mono', monospace; font-size: 11.5px; letter-spacing: .1em; text-transform: uppercase; color: var(--muted, #6f6f66); margin-top: 12px;">Publications</div>
+      </div>
+      <div>
+        <div style="font-family: 'Spectral', serif; font-size: clamp(30px, 3.4vw, 42px); font-weight: 500; line-height: 1; letter-spacing: -.02em;">60</div>
+        <div style="font-family: 'IBM Plex Mono', monospace; font-size: 11.5px; letter-spacing: .1em; text-transform: uppercase; color: var(--muted, #6f6f66); margin-top: 12px;">Largest team led</div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ABOUT -->
+  <section id="about" style="max-width: 1180px; margin: 0 auto; padding: clamp(48px, 8vw, 110px) clamp(20px, 6vw, 100px);">
+    <div style="display: grid; grid-template-columns: minmax(0, 280px) minmax(0, 1fr); gap: clamp(28px, 5vw, 80px);">
+      <div style="font-family: 'IBM Plex Mono', monospace; font-size: 12.5px; letter-spacing: .18em; text-transform: uppercase; color: var(--accent, #285a64); padding-top: 12px;">01 — About</div>
+      <div>
+        <p style="font-family: 'Spectral', serif; font-weight: 400; font-size: clamp(22px, 2.4vw, 30px); line-height: 1.42; letter-spacing: -.01em; margin: 0 0 28px; text-wrap: pretty;">Driven by curiosity — an explorer of reality with a strong sense for people, technology and the life sciences, and the ability to listen, structure, innovate, and finish what was started.</p>
+        <p style="font-size: 18px; line-height: 1.66; color: color-mix(in srgb, var(--ink, #20262b) 84%, transparent); margin: 0 0 18px; max-width: 60ch;">A highly creative person who enjoys connections in life — between people or concepts — that can be very diverse, thanks to an inherent interdisciplinarity. My work sits where healthcare, technology, policy and human behaviour meet.</p>
+        <p style="font-size: 18px; line-height: 1.66; color: color-mix(in srgb, var(--ink, #20262b) 84%, transparent); margin: 0; max-width: 60ch;">I also love to travel and grow more sensitive to different cultures. My close family communicates in five languages — together with a love for music and art, this cultural diversity is a big part of who I am.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- WORK -->
+  <section id="work" style="background: color-mix(in srgb, var(--ink, #20262b) 4%, var(--paper, #f5f1e8)); border-top: 1px solid var(--line, rgba(32,38,43,.12)); border-bottom: 1px solid var(--line, rgba(32,38,43,.12));">
+    <div style="max-width: 1180px; margin: 0 auto; padding: clamp(48px, 8vw, 110px) clamp(20px, 6vw, 100px);">
+      <div style="display: grid; grid-template-columns: minmax(0, 280px) minmax(0, 1fr); gap: clamp(28px, 5vw, 80px);">
+        <div>
+          <div style="font-family: 'IBM Plex Mono', monospace; font-size: 12.5px; letter-spacing: .18em; text-transform: uppercase; color: var(--accent, #285a64);">02 — Experience</div>
+          <h2 style="font-family: 'Spectral', serif; font-weight: 500; font-size: clamp(28px, 3.2vw, 40px); line-height: 1.08; letter-spacing: -.02em; margin: 18px 0 0;">Selected roles</h2>
+        </div>
+        <div style="display: flex; flex-direction: column;">
+
+          <div style="display: grid; grid-template-columns: 130px minmax(0,1fr); gap: clamp(16px, 3vw, 40px); padding: 30px 0; border-top: 1px solid var(--line, rgba(32,38,43,.12));">
+            <div style="font-family: 'IBM Plex Mono', monospace; font-size: 12.5px; color: var(--muted, #6f6f66); padding-top: 5px;">2024 — now</div>
+            <div>
+              <h3 style="font-family: 'Spectral', serif; font-weight: 500; font-size: 23px; letter-spacing: -.01em; margin: 0 0 4px;">Scientific Associate</h3>
+              <div style="font-size: 15px; color: var(--accent, #285a64); font-weight: 600; margin-bottom: 12px;">Institute of Oncology Ljubljana</div>
+              <p style="font-size: 16.5px; line-height: 1.62; color: color-mix(in srgb, var(--ink, #20262b) 82%, transparent); margin: 0; max-width: 58ch;">Leading R&amp;D for the national cervical-cancer screening information system into production, and applying AI in cancer screening — machine learning for missing &amp; synthetic data, LLM/RAG systems over registry data, and a “clinical agent” predicting next steps for women. Representing the institute in European networks on AI in screening.</p>
+            </div>
+          </div>
+
+          <div style="display: grid; grid-template-columns: 130px minmax(0,1fr); gap: clamp(16px, 3vw, 40px); padding: 30px 0; border-top: 1px solid var(--line, rgba(32,38,43,.12));">
+            <div style="font-family: 'IBM Plex Mono', monospace; font-size: 12.5px; color: var(--muted, #6f6f66); padding-top: 5px;">2020 — 2024</div>
+            <div>
+              <h3 style="font-family: 'Spectral', serif; font-weight: 500; font-size: 23px; letter-spacing: -.01em; margin: 0 0 4px;">Head of MedTech &amp; Digital Healthcare</h3>
+              <div style="font-size: 15px; color: var(--accent, #285a64); font-weight: 600; margin-bottom: 12px;">3fs — for Getinge AB, Stockholm</div>
+              <p style="font-size: 16.5px; line-height: 1.62; color: color-mix(in srgb, var(--ink, #20262b) 82%, transparent); margin: 0; max-width: 58ch;">Defined interoperability strategy for an ICU medical-device supplier — vision, tactics and product innovation to make interoperability part of every product team, reducing complexity across hospital environments.</p>
+            </div>
+          </div>
+
+          <div style="display: grid; grid-template-columns: 130px minmax(0,1fr); gap: clamp(16px, 3vw, 40px); padding: 30px 0; border-top: 1px solid var(--line, rgba(32,38,43,.12));">
+            <div style="font-family: 'IBM Plex Mono', monospace; font-size: 12.5px; color: var(--muted, #6f6f66); padding-top: 5px;">2015 — 2019</div>
+            <div>
+              <h3 style="font-family: 'Spectral', serif; font-weight: 500; font-size: 23px; letter-spacing: -.01em; margin: 0 0 4px;">Head, Centre for Healthcare Informatics</h3>
+              <div style="font-size: 15px; color: var(--accent, #285a64); font-weight: 600; margin-bottom: 12px;">National Institute of Public Health (NIJZ), Slovenia</div>
+              <p style="font-size: 16.5px; line-height: 1.62; color: color-mix(in srgb, var(--ink, #20262b) 82%, transparent); margin: 0; max-width: 58ch;">National expert leading a centre of 35 people on eHealth and telemedicine — interoperability (IHE, openEHR, SNOMED, Continua), cross-border patient-data exchange, and EU projects including the eHealth Joint Action, CEF SI-PASS (eID/eIDAS) and the national EHR.</p>
+            </div>
+          </div>
+
+          <div style="display: grid; grid-template-columns: 130px minmax(0,1fr); gap: clamp(16px, 3vw, 40px); padding: 30px 0; border-top: 1px solid var(--line, rgba(32,38,43,.12));">
+            <div style="font-family: 'IBM Plex Mono', monospace; font-size: 12.5px; color: var(--muted, #6f6f66); padding-top: 5px;">2014 — 2015</div>
+            <div>
+              <h3 style="font-family: 'Spectral', serif; font-weight: 500; font-size: 23px; letter-spacing: -.01em; margin: 0 0 4px;">Senior Government Official &amp; Project Manager</h3>
+              <div style="font-size: 15px; color: var(--accent, #285a64); font-weight: 600; margin-bottom: 12px;">Ministry of Health of the Republic of Slovenia</div>
+              <p style="font-size: 16.5px; line-height: 1.62; color: color-mix(in srgb, var(--ink, #20262b) 82%, transparent); margin: 0; max-width: 58ch;">Subject-matter expert and project manager on the National eHealth Project — turning the founding specifications and documents into real national information infrastructure, with custody of the standards (openEHR, IHE) still in use today.</p>
+            </div>
+          </div>
+
+          <div style="display: grid; grid-template-columns: 130px minmax(0,1fr); gap: clamp(16px, 3vw, 40px); padding: 30px 0; border-top: 1px solid var(--line, rgba(32,38,43,.12)); border-bottom: 1px solid var(--line, rgba(32,38,43,.12));">
+            <div style="font-family: 'IBM Plex Mono', monospace; font-size: 12.5px; color: var(--muted, #6f6f66); padding-top: 5px;">2003 — 2014</div>
+            <div>
+              <h3 style="font-family: 'Spectral', serif; font-weight: 500; font-size: 23px; letter-spacing: -.01em; margin: 0 0 4px;">Architect, Project &amp; Engineering Lead</h3>
+              <div style="font-size: 15px; color: var(--accent, #285a64); font-weight: 600; margin-bottom: 12px;">Univ. of Primorska · SRC.SI · Medius · epSOS / PARENT</div>
+              <p style="font-size: 16.5px; line-height: 1.62; color: color-mix(in srgb, var(--ink, #20262b) 82%, transparent); margin: 0; max-width: 58ch;">A decade leading software engineering and architecture across e-government and EU healthcare projects — chief architect on national eCare research (teams up to 60), cross-border patient data in epSOS, and the European patient-registry network PARENT.</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOCUS -->
+  <section id="focus" style="max-width: 1180px; margin: 0 auto; padding: clamp(48px, 8vw, 110px) clamp(20px, 6vw, 100px);">
+    <div style="display: grid; grid-template-columns: minmax(0, 280px) minmax(0, 1fr); gap: clamp(28px, 5vw, 80px);">
+      <div>
+        <div style="font-family: 'IBM Plex Mono', monospace; font-size: 12.5px; letter-spacing: .18em; text-transform: uppercase; color: var(--accent, #285a64);">03 — Focus</div>
+        <h2 style="font-family: 'Spectral', serif; font-weight: 500; font-size: clamp(28px, 3.2vw, 40px); line-height: 1.08; letter-spacing: -.02em; margin: 18px 0 0;">What I work on</h2>
+      </div>
+      <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 1px; background: var(--line, rgba(32,38,43,.12)); border: 1px solid var(--line, rgba(32,38,43,.12));">
+
+        <div style="background: var(--paper, #f5f1e8); padding: 28px clamp(20px,2.4vw,30px);" style-hover="background:color-mix(in srgb, var(--accent,#285a64) 5%, var(--paper,#f5f1e8))">
+          <div style="font-family: 'Spectral', serif; font-size: 21px; font-weight: 500; margin-bottom: 10px;">Healthcare interoperability</div>
+          <p style="font-size: 15.5px; line-height: 1.55; color: var(--muted, #6f6f66); margin: 0;">Designing systems that speak to one another — IHE, openEHR, HL7, SNOMED and Continua at national scale.</p>
+        </div>
+        <div style="background: var(--paper, #f5f1e8); padding: 28px clamp(20px,2.4vw,30px);" style-hover="background:color-mix(in srgb, var(--accent,#285a64) 5%, var(--paper,#f5f1e8))">
+          <div style="font-family: 'Spectral', serif; font-size: 21px; font-weight: 500; margin-bottom: 10px;">AI in cancer screening</div>
+          <p style="font-size: 15.5px; line-height: 1.55; color: var(--muted, #6f6f66); margin: 0;">Machine learning, synthetic data, LLM/RAG systems and clinical agents applied to real screening programmes.</p>
+        </div>
+        <div style="background: var(--paper, #f5f1e8); padding: 28px clamp(20px,2.4vw,30px);" style-hover="background:color-mix(in srgb, var(--accent,#285a64) 5%, var(--paper,#f5f1e8))">
+          <div style="font-family: 'Spectral', serif; font-size: 21px; font-weight: 500; margin-bottom: 10px;">National eHealth &amp; governance</div>
+          <p style="font-size: 15.5px; line-height: 1.55; color: var(--muted, #6f6f66); margin: 0;">Architecture, standards, and governance of common eHealth artefacts, databases and services on the national level.</p>
+        </div>
+        <div style="background: var(--paper, #f5f1e8); padding: 28px clamp(20px,2.4vw,30px);" style-hover="background:color-mix(in srgb, var(--accent,#285a64) 5%, var(--paper,#f5f1e8))">
+          <div style="font-family: 'Spectral', serif; font-size: 21px; font-weight: 500; margin-bottom: 10px;">Cross-border health data</div>
+          <p style="font-size: 15.5px; line-height: 1.55; color: var(--muted, #6f6f66); margin: 0;">Patient-summary exchange across EU member states — epSOS, CEF and eIDAS-aligned national contact points.</p>
+        </div>
+        <div style="background: var(--paper, #f5f1e8); padding: 28px clamp(20px,2.4vw,30px);" style-hover="background:color-mix(in srgb, var(--accent,#285a64) 5%, var(--paper,#f5f1e8))">
+          <div style="font-family: 'Spectral', serif; font-size: 21px; font-weight: 500; margin-bottom: 10px;">Health data semantics</div>
+          <p style="font-size: 15.5px; line-height: 1.55; color: var(--muted, #6f6f66); margin: 0;">Doctoral research on democratizing and commoning semantic interoperability for sustainable health systems.</p>
+        </div>
+        <div style="background: var(--paper, #f5f1e8); padding: 28px clamp(20px,2.4vw,30px);" style-hover="background:color-mix(in srgb, var(--accent,#285a64) 5%, var(--paper,#f5f1e8))">
+          <div style="font-family: 'Spectral', serif; font-size: 21px; font-weight: 500; margin-bottom: 10px;">Socio-technical leadership</div>
+          <p style="font-size: 15.5px; line-height: 1.55; color: var(--muted, #6f6f66); margin: 0;">Managing change, risk and stakeholders on high-stakes healthcare programmes, with teams of up to 60 people.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- PUBLICATIONS -->
+  <section id="publications" style="background: color-mix(in srgb, var(--ink, #20262b) 4%, var(--paper, #f5f1e8)); border-top: 1px solid var(--line, rgba(32,38,43,.12)); border-bottom: 1px solid var(--line, rgba(32,38,43,.12));">
+    <div style="max-width: 1180px; margin: 0 auto; padding: clamp(48px, 8vw, 110px) clamp(20px, 6vw, 100px);">
+      <div style="display: grid; grid-template-columns: minmax(0, 280px) minmax(0, 1fr); gap: clamp(28px, 5vw, 80px);">
+        <div>
+          <div style="font-family: 'IBM Plex Mono', monospace; font-size: 12.5px; letter-spacing: .18em; text-transform: uppercase; color: var(--accent, #285a64);">04 — Research</div>
+          <h2 style="font-family: 'Spectral', serif; font-weight: 500; font-size: clamp(28px, 3.2vw, 40px); line-height: 1.08; letter-spacing: -.02em; margin: 18px 0 16px;">Selected publications</h2>
+          <p style="font-size: 15px; line-height: 1.55; color: var(--muted, #6f6f66); margin: 0;">A selection from 35 peer-reviewed papers, chapters and a doctoral thesis.</p>
+        </div>
+        <div style="display: flex; flex-direction: column;">
+
+          <a href="https://thecommonsjournal.org/articles/10.5334/ijc.1157" target="_blank" rel="noopener" style="text-decoration: none; color: inherit; display: block; padding: 26px 0; border-top: 1px solid var(--line, rgba(32,38,43,.12));" style-hover="opacity:.62">
+            <div style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: var(--accent, #285a64); margin-bottom: 9px;">2022 · The International Journal of the Commons</div>
+            <div style="font-family: 'Spectral', serif; font-size: 21px; font-weight: 500; line-height: 1.3; letter-spacing: -.01em;">Commoning semantic interoperability in healthcare</div>
+          </a>
+
+          <a href="https://link.springer.com/chapter/10.1007/978-3-031-34586-9_24" target="_blank" rel="noopener" style="text-decoration: none; color: inherit; display: block; padding: 26px 0; border-top: 1px solid var(--line, rgba(32,38,43,.12));" style-hover="opacity:.62">
+            <div style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: var(--accent, #285a64); margin-bottom: 9px;">2023 · Springer (PervasiveHealth, LNICST 488)</div>
+            <div style="font-family: 'Spectral', serif; font-size: 21px; font-weight: 500; line-height: 1.3; letter-spacing: -.01em;">Health data semantics: exploring requirements for sustainable health systems</div>
+          </a>
+
+          <a href="https://aci.schattauer.de/en/contents/archive/issue/2503/issue/special/manuscript/27811/show.html" target="_blank" rel="noopener" style="text-decoration: none; color: inherit; display: block; padding: 26px 0; border-top: 1px solid var(--line, rgba(32,38,43,.12));" style-hover="opacity:.62">
+            <div style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: var(--accent, #285a64); margin-bottom: 9px;">2017 · Applied Clinical Informatics</div>
+            <div style="font-family: 'Spectral', serif; font-size: 21px; font-weight: 500; line-height: 1.3; letter-spacing: -.01em;">Combining openEHR, SNOMED, IHE and Continua as approaches to interoperability on national eHealth</div>
+          </a>
+
+          <a href="https://aime17.aimedicine.info/" target="_blank" rel="noopener" style="text-decoration: none; color: inherit; display: block; padding: 26px 0; border-top: 1px solid var(--line, rgba(32,38,43,.12));" style-hover="opacity:.62">
+            <div style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: var(--accent, #285a64); margin-bottom: 9px;">2017 · AIME — Artificial Intelligence in Medicine</div>
+            <div style="font-family: 'Spectral', serif; font-size: 21px; font-weight: 500; line-height: 1.3; letter-spacing: -.01em;">Modelling time-series of glucose measurements from diabetes patients using predictive clustering trees</div>
+          </a>
+
+          <a href="https://pure.itu.dk/en/publications/democratizing-health-data-semantics-a-commons-based-technology-en/" target="_blank" rel="noopener" style="text-decoration: none; color: inherit; display: block; padding: 26px 0; border-top: 1px solid var(--line, rgba(32,38,43,.12)); border-bottom: 1px solid var(--line, rgba(32,38,43,.12));" style-hover="opacity:.62">
+            <div style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: var(--accent, #285a64); margin-bottom: 9px;">2022 · PhD Thesis · IT University of Copenhagen</div>
+            <div style="font-family: 'Spectral', serif; font-size: 21px; font-weight: 500; line-height: 1.3; letter-spacing: -.01em;">Democratizing health data semantics: a commons-based, technology-enhanced activity space</div>
+          </a>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EDUCATION + LANGUAGES -->
+  <section id="education" style="max-width: 1180px; margin: 0 auto; padding: clamp(48px, 8vw, 110px) clamp(20px, 6vw, 100px);">
+    <div style="display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: clamp(40px, 6vw, 90px);">
+
+      <div>
+        <div style="font-family: 'IBM Plex Mono', monospace; font-size: 12.5px; letter-spacing: .18em; text-transform: uppercase; color: var(--accent, #285a64); margin-bottom: 26px;">05 — Education</div>
+        <div style="padding-bottom: 22px; margin-bottom: 22px; border-bottom: 1px solid var(--line, rgba(32,38,43,.12));">
+          <div style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: var(--muted, #6f6f66); margin-bottom: 8px;">2017 — 2022</div>
+          <div style="font-family: 'Spectral', serif; font-size: 22px; font-weight: 500; letter-spacing: -.01em; margin-bottom: 4px;">PhD — Health Data Semantics</div>
+          <div style="font-size: 16px; color: color-mix(in srgb, var(--ink,#20262b) 78%, transparent);">IT University of Copenhagen — interdisciplinary thesis linking computer science, information systems, digital design and political economy.</div>
+        </div>
+        <div>
+          <div style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: var(--muted, #6f6f66); margin-bottom: 8px;">2000 — 2007</div>
+          <div style="font-family: 'Spectral', serif; font-size: 22px; font-weight: 500; letter-spacing: -.01em; margin-bottom: 4px;">BSc — Computer &amp; Information Science</div>
+          <div style="font-size: 16px; color: color-mix(in srgb, var(--ink,#20262b) 78%, transparent);">University of Ljubljana, Faculty of Computer and Information Science.</div>
+        </div>
+      </div>
+
+      <div>
+        <div style="font-family: 'IBM Plex Mono', monospace; font-size: 12.5px; letter-spacing: .18em; text-transform: uppercase; color: var(--accent, #285a64); margin-bottom: 26px;">06 — Languages</div>
+        <div style="display: flex; flex-direction: column; gap: 0;">
+
+          <div style="display: flex; align-items: baseline; justify-content: space-between; gap: 16px; padding: 13px 0; border-bottom: 1px solid var(--line, rgba(32,38,43,.12));">
+            <span style="font-family: 'Spectral', serif; font-size: 19px;">Slovene</span>
+            <span style="font-family: 'IBM Plex Mono', monospace; font-size: 13px; color: var(--muted, #6f6f66);">Mother tongue</span>
+          </div>
+          <div style="display: flex; align-items: baseline; justify-content: space-between; gap: 16px; padding: 13px 0; border-bottom: 1px solid var(--line, rgba(32,38,43,.12));">
+            <span style="font-family: 'Spectral', serif; font-size: 19px;">English</span>
+            <span style="font-family: 'IBM Plex Mono', monospace; font-size: 13px; color: var(--muted, #6f6f66);">C2 · Proficient</span>
+          </div>
+          <div style="display: flex; align-items: baseline; justify-content: space-between; gap: 16px; padding: 13px 0; border-bottom: 1px solid var(--line, rgba(32,38,43,.12));">
+            <span style="font-family: 'Spectral', serif; font-size: 19px;">Croatian</span>
+            <span style="font-family: 'IBM Plex Mono', monospace; font-size: 13px; color: var(--muted, #6f6f66);">C2 · Proficient</span>
+          </div>
+          <div style="display: flex; align-items: baseline; justify-content: space-between; gap: 16px; padding: 13px 0; border-bottom: 1px solid var(--line, rgba(32,38,43,.12));">
+            <span style="font-family: 'Spectral', serif; font-size: 19px;">German</span>
+            <span style="font-family: 'IBM Plex Mono', monospace; font-size: 13px; color: var(--muted, #6f6f66);">A2 · Basic</span>
+          </div>
+          <div style="display: flex; align-items: baseline; justify-content: space-between; gap: 16px; padding: 13px 0; border-bottom: 1px solid var(--line, rgba(32,38,43,.12));">
+            <span style="font-family: 'Spectral', serif; font-size: 19px;">French</span>
+            <span style="font-family: 'IBM Plex Mono', monospace; font-size: 13px; color: var(--muted, #6f6f66);">A1 · Learning daily</span>
+          </div>
+          <div style="display: flex; align-items: baseline; justify-content: space-between; gap: 16px; padding: 13px 0;">
+            <span style="font-family: 'Spectral', serif; font-size: 19px;">Macedonian</span>
+            <span style="font-family: 'IBM Plex Mono', monospace; font-size: 13px; color: var(--muted, #6f6f66);">A1 · Basic</span>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- CONTACT / FOOTER -->
+  <footer id="contact" style="background: var(--ink, #20262b); color: #ece7dc;">
+    <div style="max-width: 1180px; margin: 0 auto; padding: clamp(56px, 9vw, 120px) clamp(20px, 6vw, 100px);">
+      <div style="font-family: 'IBM Plex Mono', monospace; font-size: 12.5px; letter-spacing: .18em; text-transform: uppercase; color: color-mix(in srgb, var(--accent,#285a64) 60%, #ece7dc); margin-bottom: 26px;">07 — Get in touch</div>
+      <h2 style="font-family: 'Spectral', serif; font-weight: 400; font-size: clamp(32px, 5vw, 60px); line-height: 1.06; letter-spacing: -.02em; margin: 0 0 36px; max-width: 16ch; text-wrap: balance;">Let's build health systems that understand each other.</h2>
+      <a href="mailto:mate.bestek@gmail.com" style="font-family: 'Spectral', serif; font-size: clamp(22px, 3vw, 34px); color: #ece7dc; text-decoration: none; border-bottom: 1px solid color-mix(in srgb, #ece7dc 40%, transparent); padding-bottom: 4px;" style-hover="border-color:var(--accent,#285a64)">mate.bestek@gmail.com</a>
+
+      <div style="display: flex; flex-wrap: wrap; gap: 28px; margin-top: 56px; padding-top: 32px; border-top: 1px solid rgba(236,231,220,.16); font-size: 15px;">
+        <a href="https://www.linkedin.com/in/matebestek" target="_blank" rel="noopener" style="color: #ece7dc; text-decoration: none; opacity: .8;" style-hover="opacity:1">LinkedIn ↗</a>
+        <a href="https://github.com/matebestek" target="_blank" rel="noopener" style="color: #ece7dc; text-decoration: none; opacity: .8;" style-hover="opacity:1">GitHub ↗</a>
+        <a href="assets/Mate-Bestek-CV.pdf" target="_blank" rel="noopener" style="color: #ece7dc; text-decoration: none; opacity: .8;" style-hover="opacity:1">Full CV (PDF) ↓</a>
+        <span style="margin-left: auto; opacity: .55; font-family: 'IBM Plex Mono', monospace; font-size: 12.5px;">Ljubljana, Slovenia &amp; Paris, France</span>
+      </div>
+    </div>
+  </footer>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1180,&quot;height&quot;:900},&quot;accent&quot;:{&quot;editor&quot;:&quot;color&quot;,&quot;default&quot;:&quot;#3cb1c8&quot;,&quot;options&quot;:[&quot;#285a64&quot;,&quot;#9d5b3f&quot;,&quot;#7a2e35&quot;,&quot;#2a3f6b&quot;],&quot;tsType&quot;:&quot;string&quot;},&quot;paperTone&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;default&quot;:&quot;Warm&quot;,&quot;options&quot;:[&quot;Warm&quot;,&quot;Cool&quot;],&quot;tsType&quot;:&quot;string&quot;},&quot;portrait&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:false,&quot;tsType&quot;:&quot;boolean&quot;}}">
+class Component extends DCLogic {
+  renderVals() {
+    const tone = this.props.paperTone ?? 'Warm';
+    const paper = tone === 'Cool' ? '#eef0ee' : '#f5f1e8';
+    return {
+      accent: this.props.accent ?? '#285a64',
+      paper,
+      portrait: this.props.portrait ?? true,
+    };
+  }
+}
+</script>
+</body>
+</html>
